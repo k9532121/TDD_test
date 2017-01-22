@@ -17,4 +17,19 @@ class BookTest extends \PHPUnit\Framework\TestCase
         /** assert */
         $this->assertEquals($totalPrice, $result);
     }
+
+    /** 如果你從這個系列買了兩本不同的書，則會有5%的折扣 */
+    public function test_for_買了兩本不同的書()
+    {
+        /** arrange */
+        $data = [1, 1, 0, 0, 0];
+        $totalPrice = 190;
+
+        /** act */
+        $Book = new Book($data);
+        $result = $Book->getPrice();
+
+        /** assert */
+        $this->assertEquals($totalPrice, $result);
+    }
 }
