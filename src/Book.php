@@ -23,6 +23,9 @@ class Book
         if ($bookTmp==1) {
             $money += $this->oneBookPrice;
         }
+        if ($bookTmp==2) {
+            $money += ($bookTmp*$this->oneBookPrice*0.95);
+        }
         return $money;
     }
 }
