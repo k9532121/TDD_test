@@ -77,4 +77,19 @@ class BookTest extends \PHPUnit\Framework\TestCase
         /** assert */
         $this->assertEquals($totalPrice, $result);
     }
+
+    /** 需要留意的是，如果你買了四本書，其中三本不同，第四本則是重複的，那麼那三本將享有10%的折扣，但重複的那一本，則仍須100元。 */
+    public function test_for_買了四本書，其中三本不同()
+    {
+        /** arrange */
+        $data = [1, 1, 2, 0, 0];
+        $totalPrice = 370;
+
+        /** act */
+        $Book = new Book($data);
+        $result = $Book->getPrice();
+
+        /** assert */
+        $this->assertEquals($totalPrice, $result);
+    }
 }
