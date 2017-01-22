@@ -29,6 +29,9 @@ class Book
         if ($bookTmp==3) {
             $money += ($bookTmp*$this->oneBookPrice*0.9);
         }
+        if ($bookTmp==4) {
+            $money += ($bookTmp*$this->oneBookPrice*0.8);
+        }
         return $money;
     }
 }
